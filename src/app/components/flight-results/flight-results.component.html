@@ -1,0 +1,24 @@
+<div class="flights-list container">
+    <ng-container *ngIf="flightResult && flightResult.length > 0">
+        <h2>Flight results</h2>
+        <div class="container">
+            <div *ngFor= "let flight of flightResult">
+                <div class="flight-details">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img [src]="flight.AirlineLogoAddress"/>
+                            <p>{{flight.AirlineName}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p><label>Outbound flight duration: </label><span>{{flight.OutboundFlightsDuration}}</span></p>
+                            <p><label>Inbound flight duration: </label><span>{{flight.InboundFlightsDuration}}</span></p>
+                            <p><label>Total amount: </label><span>{{flight.TotalAmount | currency: USD }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+  
+   
+</div>

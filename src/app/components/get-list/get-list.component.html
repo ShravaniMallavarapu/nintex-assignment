@@ -1,0 +1,53 @@
+<div class="flight-container container">
+    <h2 class="flight-header">Please enter the flight details </h2>
+    <form [formGroup]="flighDetailstForm" class="flight-form" (ngSubmit)="onSubmitDetails()">
+        <div class="row">
+            <div class="col-2" [ngClass]="{ 'has-error': isSubmitted && formControls.DepartureAirportCode.errors }">
+                <label>Departure code</label>
+                <input type="text" placeholder="Departure code" formControlName="DepartureAirportCode">
+                <div *ngIf="isSubmitted && formControls.DepartureAirportCode.errors" class="error">
+                    <div *ngIf="formControls.DepartureAirportCode.errors.required">Departure code is required</div>
+                    <div *ngIf="formControls.DepartureAirportCode.errors.maxLength">Departure code must be of 3 characters</div>
+                </div>
+            </div>
+            <div class="col-2" [ngClass]="{'has-error': isSubmitted && formControls.ArrivalAirportCode.errors }">
+                <label>Arrival code</label>
+                <input type="text" placeholder="Arrival code" formControlName="ArrivalAirportCode">
+                <div *ngIf="isSubmitted && formControls.ArrivalAirportCode.errors" class="error">
+                    <div *ngIf="formControls.ArrivalAirportCode.errors.required">Arrival code is required</div>
+                    <div *ngIf="formControls.ArrivalAirportCode.errors.maxLength">Arrival code must be of 3 characters</div>
+                </div>
+            </div>
+        
+           
+            <div class="col-3" [ngClass]="{ 'has-error': isSubmitted && formControls.DepartureDate.errors }">
+                <label>Departure date</label>
+                <input type="date" placeholder="Departure date" formControlName="DepartureDate">
+                <div *ngIf="isSubmitted && formControls.DepartureDate.errors" class="error">
+                    <div *ngIf="formControls.DepartureDate.errors.required">Departure date is required</div>
+                </div>
+            </div>
+        
+            <div class="col-3" [ngClass]="{'has-error': isSubmitted && formControls.ReturnDate.errors }">
+                <label>Arrival date</label>
+                <input type="date" placeholder="Arrival date" formControlName="ReturnDate">
+                <div *ngIf="isSubmitted && error.isError" class="error">
+                   {{error.errorMessage}}
+                </div>
+                <div *ngIf="isSubmitted && formControls.ReturnDate.errors" class="error">
+                    <div *ngIf="formControls.ReturnDate.errors.required">Arrival code is required</div>
+                </div>
+            </div>
+        
+            <div class="col-2 button">
+              <input type="submit" value="Search">
+            </div>
+             
+        </div>
+        
+    </form>
+  </div>
+  <div *ngIf="flightsResponse && flightsResponse.length > 0">
+    <app-flight-results [flightResult]="flightsResponse"></app-flight-results>
+  </div>
+ 

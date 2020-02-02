@@ -1,0 +1,15 @@
+.container {
+    border: 1px solid grey;
+    margin-top: 20px;
+}
+.flights-list.container {
+    border: none;
+}
+.flight-details {
+    border-bottom: 1px solid grey;
+    margin: 10px 0;
+}
+label {
+    font-weight: bold;
+    padding-right: 10px;
+}

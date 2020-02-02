@@ -1,0 +1,51 @@
+  .flight-container {
+    margin-top: 20px;;
+  }
+
+  .error {
+      color:  red;
+  }
+
+  .has-error input[type="text"],
+  .has-error input[type="date"]{
+      border-color:  red;
+     
+  }
+  .flight-container-header {
+    background: rgb(12, 77, 129);
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+ .button {
+   margin-top: 30px;
+ }
+  
+  .flight-container p {
+    padding: 12px;
+  }
+  
+  .flight-container input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+  }
+
+  
+  .flight-container input[type="submit"] {
+    background: #17c;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+ 
